@@ -203,7 +203,7 @@ header .wa{letter-spacing:.04em;font-size:14px}
 /* celular: uma seção por aba */
 @media(max-width:879px){
 html.js main>section,html.js footer{display:none}
-html.js[data-tab="inicio"] #inicio,html.js[data-tab="inicio"] .strip,html.js[data-tab="inicio"] .video,html.js[data-tab="inicio"] .endlogo,html.js[data-tab="beneficios"] #beneficios,html.js[data-tab="como-funciona"] #como-funciona,html.js[data-tab="alunos"] #alunos,html.js[data-tab="matricula"] #matricula,html.js[data-tab="contato"] footer{display:block}
+html.js[data-tab="inicio"] #inicio,html.js[data-tab="inicio"] .strip,html.js[data-tab="inicio"] .video,html.js[data-tab="inicio"] .depo,html.js[data-tab="inicio"] .endlogo,html.js[data-tab="beneficios"] #beneficios,html.js[data-tab="como-funciona"] #como-funciona,html.js[data-tab="alunos"] #alunos,html.js[data-tab="matricula"] #matricula,html.js[data-tab="contato"] footer{display:block}
 }
 /* tema único (azul-escuro) em qualquer aparelho */
 :root{--bg:#0A1730;--paper:#0E1F40;--tint:#17305A;--logo:#fff;--la-c:#8CC4FF;--surface:#13284D;--ink:#F1F5FF;--muted:#D3DEF3;--brand:#8CC4FF;--line:#234068;--err:#ff8a80;--navy:#16346A;--navy2:#061328;--h:#fff;--bi:#E6EEFF;--mk:rgba(245,184,46,.5);--mkc:#FFD15C;--mkbg:linear-gradient(transparent 84%,#F5B82E 84% 95%,transparent 95%);color-scheme:dark}
@@ -292,6 +292,16 @@ h2 mark{color:var(--mkc);background:var(--mkbg);padding:0 .08em;margin:0 -.08em}
 .video h2::before{margin-inline:auto}
 .vbox{max-width:320px;margin:0 auto;padding:8px;border-radius:22px;background:linear-gradient(180deg,#fff,#FFF1CC);box-shadow:0 16px 34px rgba(0,0,0,.42),0 0 0 2px rgba(245,184,46,.55)}
 .vbox iframe{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:15px;background:#000}
+.depo{padding:8px 0 40px}
+.depo .head{text-align:center;margin-inline:auto}
+.depo h2::before{margin-inline:auto}
+.vtrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px 20px 18px;margin:0 -20px;scrollbar-width:thin}
+.vcard{flex:0 0 min(240px,68vw);scroll-snap-align:center;margin:0}
+.vcard .vbox{max-width:none;margin:0}
+.vcard video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:15px;background:#000}
+.vcard figcaption{margin-top:12px;text-align:center;font-weight:700;font-size:16px;line-height:1.3;color:var(--ink)}
+.vhint{text-align:center;color:var(--muted);font-size:14px;margin:0}
+@media(min-width:900px){.vtrack{justify-content:center;overflow:visible;flex-wrap:wrap;margin:0;padding:6px 0 18px}.vhint{display:none}.vcard{flex:0 0 calc((100% - 64px)/5)}.vcard figcaption{font-size:15px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O certificado vale para faculdade e concurso?", "acceptedAnswer": {"@type": "Answer", "text": "O certificado é reconhecido pelo MEC e CEE e tem validade nacional, aceito para faculdades, concursos e processos seletivos."}}, {"@type": "Question", "name": "Preciso ir a algum lugar?", "acceptedAnswer": {"@type": "Answer", "text": "Não. A matrícula e os estudos são 100% online. Você envia os documentos pelo WhatsApp e estuda pelo celular ou computador."}}, {"@type": "Question", "name": "Em quanto tempo eu concluo?", "acceptedAnswer": {"@type": "Answer", "text": "Em média, até 6 meses. O ritmo é seu, então o prazo depende de quanto você estuda por semana."}}, {"@type": "Question", "name": "Quais documentos eu preciso?", "acceptedAnswer": {"@type": "Answer", "text": "Nossa equipe passa a lista completa pelo WhatsApp, de acordo com o seu caso. Normalmente começa pelos documentos pessoais, como RG e CPF."}}, {"@type": "Question", "name": "Quanto custa?", "acceptedAnswer": {"@type": "Answer", "text": "Chame no WhatsApp e informamos o valor da matrícula, sem enrolação."}}]}</script>
 </head>
@@ -362,6 +372,18 @@ h2 mark{color:var(--mkc);background:var(--mkbg);padding:0 .08em;margin:0 -.08em}
 <section class="video" id="video"><div class="wrap">
 <div class="head"><h2>Veja <mark>como funciona</mark></h2><p>Assista e tire suas dúvidas em 1 minuto.</p></div>
 <div class="vbox"><iframe src="https://www.youtube-nocookie.com/embed/3Z2kJB8Q3ig?rel=0&amp;playsinline=1" title="Como funciona o EJA EAD da UNICAMAMU" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+</div></section>
+
+<section class="depo" id="depoimentos"><div class="wrap">
+<div class="head"><h2>Quem já <mark>conquistou</mark> o certificado</h2><p>Veja depoimentos e alunos certificados pela UNICAMAMU.</p></div>
+<div class="vtrack" role="list" aria-label="Vídeos de alunos">
+  <figure class="vcard"><div class="vbox"><video controls playsinline preload="none" poster="videos/ainda-nao-concluiu.jpg" aria-label="Ainda não concluiu seus estudos?"><source src="videos/ainda-nao-concluiu.mp4" type="video/mp4"></video></div><figcaption>Ainda não concluiu seus estudos?</figcaption></figure>
+  <figure class="vcard"><div class="vbox"><video controls playsinline preload="none" poster="videos/diploma-tecnico-farmacia.jpg" aria-label="Diploma técnico em Farmácia"><source src="videos/diploma-tecnico-farmacia.mp4" type="video/mp4"></video></div><figcaption>Diploma técnico em Farmácia</figcaption></figure>
+  <figure class="vcard"><div class="vbox"><video controls playsinline preload="none" poster="videos/aluno-certificado.jpg" aria-label="Mais um aluno certificado"><source src="videos/aluno-certificado.mp4" type="video/mp4"></video></div><figcaption>Mais um aluno certificado</figcaption></figure>
+  <figure class="vcard"><div class="vbox"><video controls playsinline preload="none" poster="videos/aluna-certificada.jpg" aria-label="Aluna certificada"><source src="videos/aluna-certificada.mp4" type="video/mp4"></video></div><figcaption>Aluna certificada</figcaption></figure>
+  <figure class="vcard"><div class="vbox"><video controls playsinline preload="none" poster="videos/ex-aluno-keu-cardoso.jpg" aria-label="Ex-aluno Keu Cardoso agradece"><source src="videos/ex-aluno-keu-cardoso.mp4" type="video/mp4"></video></div><figcaption>Ex-aluno Keu Cardoso agradece</figcaption></figure>
+</div>
+<p class="vhint">Deslize para ver mais vídeos &rarr;</p>
 </div></section>
 
 <section class="endlogo"><div class="wrap"><a class="wa-link logo-a" href="#" aria-label="Falar no WhatsApp 73 98160-5473"><svg class="logo-f lg" viewBox="0 0 520 252" role="img" aria-label="UNICAMAMU Consultoria Educacional, WhatsApp 73 98160-5473"><use href="#logo-core"/><rect x="40" y="170" width="440" height="3" rx="1.5" fill="var(--la)"/><text x="260" y="203" text-anchor="middle" textLength="300" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="currentColor">CONSULTORIA EDUCACIONAL</text><use href="#i-chat" x="141" y="215" width="30" height="30"/><text x="179" y="239" textLength="200" lengthAdjust="spacingAndGlyphs" font-family="Montserrat,Arial,sans-serif" font-weight="800" font-size="26" fill="currentColor">73 98160-5473</text></svg></a></div></section>
@@ -477,8 +499,9 @@ f.addEventListener('submit',e=>{
   f.hidden=true;document.getElementById('ok').hidden=false;
   document.getElementById('nm').textContent=nm.split(' ')[0];document.getElementById('okl').href=wa(m);
 });
+document.addEventListener('play',e=>{if(e.target.tagName==='VIDEO')document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause()})},true);
 const tabs=[...document.querySelectorAll('.bar a')],ids=tabs.map(t=>t.getAttribute('href').slice(1)),mq=matchMedia('(max-width:879px)'),R=document.documentElement;
-function show(id,top){if(id==='topo')id='inicio';if(!ids.includes(id))return;R.dataset.tab=id;tabs.forEach((t,i)=>t.setAttribute('aria-current',String(ids[i]===id)));if(top!==false)scrollTo({top:0,behavior:'instant'})}
+function show(id,top){document.querySelectorAll('video').forEach(v=>v.pause());if(id==='topo')id='inicio';if(!ids.includes(id))return;R.dataset.tab=id;tabs.forEach((t,i)=>t.setAttribute('aria-current',String(ids[i]===id)));if(top!==false)scrollTo({top:0,behavior:'instant'})}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||!mq.matches)return;const id=a.getAttribute('href').slice(1);if(id==='topo'||ids.includes(id)){e.preventDefault();show(id);history.replaceState(null,'','#'+id)}});
 show(ids.includes(location.hash.slice(1))?location.hash.slice(1):'inicio',false);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
